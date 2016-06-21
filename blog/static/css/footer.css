@@ -1,0 +1,13 @@
+footer {
+	font-family: 'Lobster', cursive;
+	opacity: 0.9;
+	margin: 20px auto 18px auto;
+	min-width: 960px;
+	text-align: center;
+	font-size: 110%;
+}
+
+footer a {
+	color: #E84A5F !important;
+	text-decoration: underline !important;
+}

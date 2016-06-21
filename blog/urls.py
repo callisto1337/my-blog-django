@@ -18,5 +18,5 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),
-    url(r'^sign_up/$', views.sign_up, name='sign_up'),
+    url(r'^auth/$', views.auth, name='auth'),
 ]

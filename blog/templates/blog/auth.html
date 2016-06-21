@@ -1,0 +1,16 @@
+{% extends 'blog/base.html'%}
+
+{% block menu %}
+	<ul class="menu">
+		<li><a href="/">Main</a></li>
+		<li class="active"><a href="/auth/">Auth</a></li>
+	</ul>
+{% endblock %}
+
+{% block content %}
+	<form action="/auth/" method="post">
+		{% csrf_token %}
+	    {{ form_auth }}
+	    <input type="submit" value="Submit" />
+	</form>
+{% endblock %}

@@ -1,0 +1,50 @@
+header {
+	background-color: #99B898;
+	height: 200px;
+}
+
+h1 span {
+	color: #E84A5F;
+}
+
+h1 {
+	margin: 0;
+	padding: 0;
+	padding: 40px 30px 70px 45px;
+	font-family: 'Lobster', cursive;
+	font-size: 300%;
+	font-weight: bold;
+	float: left;
+}
+
+h1 a {
+	color: white !important;
+}
+
+h1 a:hover {
+	text-decoration: none;
+}
+
+header .menu {
+	float: right;
+	margin: 40px 40px 0px 0px;
+}
+
+header .menu li {
+	float: left;
+	margin-left: 40px;
+}
+
+.menu li a {
+	color: white;
+	font-size: 180%;
+}
+
+.menu a:hover {
+	text-decoration: none;
+	border-bottom: 2px solid white;
+}
+
+.menu .active a {
+	border-bottom: 2px solid white;
+}

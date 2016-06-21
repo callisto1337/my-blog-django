@@ -1,5 +1,12 @@
 {% extends 'blog/base.html'%}
 
+{% block menu %}
+	<ul class="menu">
+		<li><a href="/">Main</a></li>
+		<li class="active"><a href="/sign_up/">Sign Up</a></li>
+	</ul>
+{% endblock %}
+
 {% block content %}
 <ul class="news">
 	{% for post in posts %}

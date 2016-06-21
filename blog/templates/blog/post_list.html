@@ -1,13 +1,20 @@
 {% extends 'blog/base.html'%}
 
+{% block menu %}
+	<ul class="menu">
+		<li class="active"><a href="/">Main</a></li>
+		<li><a href="/sign_up/">Sign Up</a></li>
+	</ul>
+{% endblock %}
+
 {% block content %}
-<ul class="news">
-	{% for post in posts %}
-		<li>
-			<h2>{{ post.title }}</h2>
-			<hr>
-			<p>{{ post.preview_post }}</p>
-		</li>
-	{% endfor %}
-</ul>
+	<ul class="news">
+		{% for post in posts %}
+			<li>
+				<h2>{{ post.title }}</h2>
+				<hr>
+				<p>{{ post.preview_post }}</p>
+			</li>
+		{% endfor %}
+	</ul>
 {% endblock %}

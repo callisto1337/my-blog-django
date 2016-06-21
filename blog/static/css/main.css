@@ -4,6 +4,7 @@ body {
 	padding: 0;
 	min-width: 1024px; 
 	font-family: sans-serif;
+	color: white;
 }
 
 h1 span {
@@ -14,39 +15,37 @@ h1 {
 	margin: 0;
 	padding: 0;
 	padding: 40px 30px 70px 45px;
-	color: white;
 	font-family: 'Lobster', cursive;
 	font-size: 300%;
 	font-weight: bold;
 	float: left;
 }
 
+h1 a {
+	color: white !important;
+}
+
+h1 a:hover {
+	text-decoration: none;
+}
+
 header {
 	background-color: #99B898;
-	margin: 0;
-	padding: 0;
 	height: 200px;
-	width: 100%;
 }
 
 .content {
 	background-color: #FECEA8;
-	margin: auto 2.5% 50px 2.5%;
-	width: 95%;
-	position: absolute;
-	box-shadow: 0 0 20px rgba(0,0,0,0.5);
-	top: 180px;
+	margin: -25px 25px 20px 25px;
+	box-shadow: 0 0 25px rgba(0,0,0,0.5);
 	min-width: 960px;
 }
 
 footer {
-	color: white;
 	font-family: 'Lobster', cursive;
 	opacity: 0.9;
-	position: absolute;
-	margin: 670px auto 18px auto;
+	margin: 20px auto 18px auto;
 	min-width: 960px;
-	width: 100%;
 	text-align: center;
 	font-size: 110%;
 }
@@ -55,50 +54,52 @@ footer a {
 	color: #E84A5F !important;
 	text-decoration: underline !important;
 }
+
 .news {
-	margin: 20px 20px 20px 20px;
+	padding: 1px 20px 20px 20px;
 }
 
 .news li {
 	padding: 7px;
-	/*border-radius: 10px;*/
-	margin-bottom: 20px;
+	margin-top: 20px;
 	background-color: #FF847C;
-	color: white;
 	box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
 }
 
 .news li h2 {
 	font-size: 150%;
-	padding: 10px;
 }
 
-.news li p {
+.news li p, .news li h2 {
 	padding: 10px;
 	font-family: 'Open Sans', sans-serif;
 }
 
 hr {
-	border: 0.5px solid #2A363B;
-	opacity: 0.4;
+	border: 1px solid #2A363B;
+	opacity: 0.3;
 }
 
-header .buttons {
+header .menu {
 	float: right;
-	margin: 0px;
-	padding: 0px;
+	margin: 40px 40px 0px 0px;
 }
 
-header .buttons li {
-	display: block;
-	float: right;
-	margin: 40px 40px 0px 40px;
-	padding: 0px;
-	width: 100px;
+header .menu li {
+	float: left;
+	margin-left: 40px;
 }
 
-header .buttons li a {
+.menu li a {
 	color: white;
-	width: 100%;
-	font-size: 200%;
+	font-size: 180%;
+}
+
+.menu a:hover {
+	text-decoration: none;
+	border-bottom: 2px solid white;
+}
+
+.menu .active a {
+	border-bottom: 2px solid white;
 }

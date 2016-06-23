@@ -19,4 +19,6 @@ from . import views
 urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),
     url(r'^auth/$', views.auth, name='auth'),
+    url(r'^reg/$', views.reg, name='reg'),
+    url(r'^logout/$', views.logout_view, name='logout_view'),
 ]

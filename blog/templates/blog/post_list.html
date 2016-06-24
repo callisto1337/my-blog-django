@@ -6,6 +6,9 @@
 	{% if user.is_authenticated %}
 		<ul class="menu">
 			<li class="active"><a href="/">Main</a></li>
+			{% if user.is_superuser %}
+				<li><a href="/admin/">Admin</a></li>
+			{% endif %}
 			<li><a href="/logout/">Exit</a></li>
 		</ul>
 	{% else %}

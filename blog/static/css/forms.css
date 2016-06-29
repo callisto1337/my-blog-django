@@ -1,21 +1,26 @@
-input {
-	display: block;
-	margin-bottom: 15px;
-	padding-left: 5px;
-	width: 200px;
-	height: 30px;
-	border-radius: 10px;
-	font-size: 130%;
+form input, form button {
+	margin: 0px auto 20px auto;
+	padding: 15px;
+	width: 220px;
+	border: 0px;
+}
+
+form button {
+	color: white;
+	background: #99B898;
+	width: 250px;
+}
+
+form button:hover {
+	cursor: pointer;
 }
 
 label {
-	margin-bottom: 10px;
-	display: block;
-	font-size: 130%;
+	display: none;
 }
 
 form {
-	width: 200px;
+	width: 250px;
 	padding: 40px;
 	margin: 0px auto;
 }
@@ -25,7 +30,7 @@ form {
 }
 
 .errorlist {
-	border: 1px solid grey;
+	border: 2px solid #E84A5F;
 	padding: 15px;
 	margin: 10px auto;
 }

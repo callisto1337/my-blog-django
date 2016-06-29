@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^auth/$', views.auth, name='auth'),
     url(r'^reg/$', views.reg, name='reg'),
     url(r'^logout/$', views.logout_view, name='logout_view'),
+    url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail, name='post_detail'),
 ]

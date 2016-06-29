@@ -2,7 +2,7 @@ footer {
 	font-family: 'Lobster', cursive;
 	opacity: 0.9;
 	margin: 20px auto 18px auto;
-	min-width: 960px;
+	width: 100%;
 	text-align: center;
 	font-size: 110%;
 }

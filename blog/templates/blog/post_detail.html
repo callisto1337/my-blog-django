@@ -1,0 +1,27 @@
+{% extends 'blog/base.html'%}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block menu %}
+	{% if user.is_authenticated %}
+		<ul class="menu">
+			<li class="active"><a href="/">Home</a></li>
+			{% if user.is_superuser %}
+				<li><a href="/admin/">Admin</a></li>
+			{% endif %}
+			<li><a href="/logout/">Sign out</a></li>
+		</ul>
+	{% else %}
+		<ul class="menu">
+			<li class="active"><a href="/">Main</a></li>
+			<li><a href="/auth/">Auth</a></li>
+			<li><a href="/reg/">Registration</a></li>
+		</ul>
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+	<h2 class="post_detail">{{ post.title }}</h2>
+	<hr>
+	<p>{{ post.text }}</p>
+{% endblock %}

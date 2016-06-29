@@ -4,16 +4,19 @@
 
 {% block menu %}
 	<ul class="menu">
-		<li><a href="/">Main</a></li>
-		<li><a href="/auth/">Auth</a></li>
-		<li class="active"><a href="/reg/">Registration</a></li>
+		<li><a href="/">Home</a></li>
+		<li><a href="/auth/">Sign in</a></li>
+		<li class="active"><a href="/reg/">Sign up</a></li>
 	</ul>
 {% endblock %}
 
 {% block content %}
-	<form action="/reg/" method="post">	    
-	    {% csrf_token %}
-    	{{ form_reg }}
-    	<button type="submit">Registration</button>
-	</form>
+	<div class="container">
+		<form action="/reg/" method="post">	    
+		    {% csrf_token %}
+	    	{{ form_reg }}
+	    	<button type="submit">Sign up</button>
+		</form>
+	</div>
+	
 {% endblock %}

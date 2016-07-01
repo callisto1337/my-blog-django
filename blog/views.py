@@ -16,16 +16,16 @@ def auth(request):
 		return redirect('/')
 	elif request.method == 'POST':
 		form_auth = AuthenticationForm(request=request, data=request.POST)
-		form_auth.fields['username'].widget.attrs.update({'placeholder': 'Username'})
-		form_auth.fields['password'].widget.attrs.update({'placeholder': 'Password'})
+		form_auth.fields['username'].widget.attrs.update({'placeholder': 'Имя пользователя'})
+		form_auth.fields['password'].widget.attrs.update({'placeholder': 'Пароль'})
 		if form_auth.is_valid():
 			user = form_auth.get_user()
 			login(request, user)
 			return redirect("/")
 	else:
 		form_auth = AuthenticationForm()
-		form_auth.fields['username'].widget.attrs.update({'placeholder': 'Username'})
-		form_auth.fields['password'].widget.attrs.update({'placeholder': 'Password'})
+		form_auth.fields['username'].widget.attrs.update({'placeholder': 'Имя пользователя'})
+		form_auth.fields['password'].widget.attrs.update({'placeholder': 'Пароль'})
 	return render(request, "blog/auth.html", {'form_auth': form_auth})
 
 def reg(request):
@@ -33,17 +33,17 @@ def reg(request):
 		return redirect('/')
 	elif request.method == 'POST':
 		form_reg = UserCreationForm(request.POST)
-		form_reg.fields['username'].widget.attrs.update({'placeholder': 'Username'})
-		form_reg.fields['password1'].widget.attrs.update({'placeholder': 'Password'})
-		form_reg.fields['password2'].widget.attrs.update({'placeholder': 'Confirm password'})
+		form_reg.fields['username'].widget.attrs.update({'placeholder': 'Имя пользователя'})
+		form_reg.fields['password1'].widget.attrs.update({'placeholder': 'Пароль'})
+		form_reg.fields['password2'].widget.attrs.update({'placeholder': 'Подтверждение пароля'})
 		if form_reg.is_valid():
 			new_user = form_reg.save()
 			return redirect('/auth/')
 	else:
 		form_reg = UserCreationForm()
-		form_reg.fields['username'].widget.attrs.update({'placeholder': 'Username'})
-		form_reg.fields['password1'].widget.attrs.update({'placeholder': 'Password'})
-		form_reg.fields['password2'].widget.attrs.update({'placeholder': 'Confirm password'})
+		form_reg.fields['username'].widget.attrs.update({'placeholder': 'Имя пользователя'})
+		form_reg.fields['password1'].widget.attrs.update({'placeholder': 'Пароль'})
+		form_reg.fields['password2'].widget.attrs.update({'placeholder': 'Подтверждение пароля'})
 	return render(request, "blog/reg.html", {'form_reg': form_reg})
 
 def logout_view(request):

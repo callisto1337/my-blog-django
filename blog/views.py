@@ -2,10 +2,38 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .models import Post
+from .forms import ContactForm
+from django.core.mail import send_mail, BadHeaderError
 
 def post_list(request):
 	posts = Post.objects.all()[:5]
 	return render(request, 'blog/post_list.html', {'posts': posts})
+
+def about(request):
+	return render(request, 'blog/about.html')
+
+def contacts(request):
+	if request.method == 'POST':
+		form_contact = ContactForm(request.POST)
+		#Если форма заполнена корректно, сохраняем все введённые пользователем значения
+		if form_contact.is_valid():
+			subject = form_contact.cleaned_data['subject']
+			sender = form_contact.cleaned_data['sender']
+			message = form_contact.cleaned_data['message']
+
+			recipients = ['live_forecast@mail.ru']
+			try:
+				send_mail(subject, message, 'hazardous333@gmail.com', recipients)
+			except BadHeaderError: #Защита от уязвимости
+				return HttpResponse('Invalid header found')
+			#Переходим на другую страницу, если сообщение отправлено
+			return render(request, 'blog/contacts.html')
+	else:
+		#Заполняем форму
+		form_contact = ContactForm()
+	#Отправляем форму на страницу
+	return render(request, 'blog/contacts.html', {'form_contact': form_contact})
+
 
 def post_detail(request, pk):
         post = get_object_or_404(Post, pk=pk)

@@ -1,19 +1,38 @@
 {% extends 'blog/base.html' %}
 
+{% block menu %}
+    <li class="active">
+        <a href="/">Главная</a>
+    </li>
+    <li>
+        <a href="about/">Обо мне</a>
+    </li>
+    <li>
+        <a href="contacts/">Контакты</a>
+    </li>
+{% endblock %}
+
+{% block page_name %}
+    <h1 class="page-header">
+        Главная страница
+        <!-- <small>Secondary Text</small> -->
+    </h1>
+{% endblock %}
+
 {% block content %}
     {% for post in posts %}
         <h2>
-        <a href="#">{{ post.title }}</a>
+        <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
         </h2>
         <p class="lead">
-            Автор: <a href="#">{{ post.author }}</a>
+            Автор: {{ post.author }}
         </p>
         <p><span class="glyphicon glyphicon-time"></span> Опубликовано {{ post.date_created }}</p>
         <hr>
-        <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+        <img class="img-responsive" src="{{ post.image_post }}" alt="">
         <hr>
         <p>{{ post.preview_post }}</p>
-        <a class="btn btn-primary" href="#">Подробнее <span class="glyphicon glyphicon-chevron-right"></span></a>
+        <a class="btn btn-primary" href="{% url 'post_detail' pk=post.pk %}">Подробнее <span class="glyphicon glyphicon-chevron-right"></span></a>
         <hr>
     {% endfor %}
 {% endblock %}
